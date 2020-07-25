@@ -57,7 +57,7 @@ paths:
         201:
           description: "Successfully created a person to the list"
 
-  /people/{lname}:
+  /people/{person_id}:
     get:
       operationId: people.read_one
       tags:
@@ -65,10 +65,10 @@ paths:
       summary: Read one person from the people list
       description: Read one person from the people list
       parameters:
-        - name: lname
+        - name: person_id
           in: path
-          description: Last name of the person to get from the list
-          type: string
+          description: Person id of the person to get from the list
+          type: integer
           required: True
       responses:
         200:
@@ -89,10 +89,10 @@ paths:
       summary: Update a person in the people list
       description: Update a person in the people list
       parameters:
-        - name: lname
+        - name: person_id
           in: path
-          description: Last name of the person to update in the list
-          type: string
+          description: Person id of the person to update in the list
+          type: integer
           required: True
         - name: person
           in: body
@@ -114,9 +114,9 @@ paths:
       summary: Delete a person from the people list
       description: Delete a person
       parameters:
-        - name: lname
+        - name: person_id
           in: path
-          type: string
+          type: integer
           required: True
       responses:
         200:
